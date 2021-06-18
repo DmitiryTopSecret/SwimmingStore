@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SwimmingStore.Models.Repository;
+using SwimmingStore.Models;
 
 namespace SwimmingStore.Controllers
 {
