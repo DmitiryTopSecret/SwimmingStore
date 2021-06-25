@@ -32,6 +32,12 @@ namespace SwimmingStore
             });
 
             services.AddScoped<IStoreRepository, EFStoreRepository>();
+
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession();
         }
 
 
@@ -45,6 +51,8 @@ namespace SwimmingStore
             app.UseStatusCodePages();
 
             app.UseStaticFiles();
+
+            app.UseSession();
 
             app.UseRouting();
 
@@ -65,6 +73,8 @@ namespace SwimmingStore
                 new { Controller = "Home", action = "Index", productPage = 1 });
 
             endpoints.MapDefaultControllerRoute();
+
+            endpoints.MapRazorPages();
         });
 
             SeedData.EnsurePopulated(app);
