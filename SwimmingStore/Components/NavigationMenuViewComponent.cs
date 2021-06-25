@@ -18,6 +18,8 @@ namespace SwimmingStore.Components
 
         public IViewComponentResult Invoke()
         {
+            ViewBag.SelectedCategory = RouteData?.Values["category"];
+
             return View(_repository.Products
                 .Select(x => x.Category)
                 .Distinct()

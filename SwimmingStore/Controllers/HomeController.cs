@@ -30,8 +30,12 @@ namespace SwimmingStore.Controllers
                 {
                     CurrentPage = productPage,
                     ItemsPerPage = PageSize,
-                    TotalItem = _repository.Products.Count()
-                }
+                    TotalItems = category == null?
+                    _repository.Products.Count() :
+                    _repository.Products.Where(e => 
+                    e.Category == category).Count()
+                },
+                CurrentCategory = category
             });
         }
     }
