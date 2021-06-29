@@ -28,7 +28,7 @@ namespace SwimmingStore.Controllers
         [HttpPost]
         public IActionResult Checkout(Order order)
         {
-            if(_cart.Lines.Count() == o)
+            if(_cart.Lines.Count() == 0)
             {
                 ModelState.AddModelError("", "Sorry, your cart is empty");
             }
