@@ -37,7 +37,7 @@ namespace SwimmingStore.Tests
                 PageModel = new PagingInfo
                 {
                     CurrentPage = 2,
-                    TotalItem = 28,
+                    TotalItems = 28,
                     ItemsPerPage = 10
                 },
                 PageAction = "Test"
